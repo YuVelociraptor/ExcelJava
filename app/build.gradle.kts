@@ -24,6 +24,9 @@ dependencies {
 
     // Source: https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
     implementation("org.apache.poi:poi-ooxml:5.5.1")
+
+    // Source: https://mvnrepository.com/artifact/cn.idev.excel/fastexcel
+    implementation("cn.idev.excel:fastexcel:1.3.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
