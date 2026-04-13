@@ -27,6 +27,9 @@ dependencies {
 
     // Source: https://mvnrepository.com/artifact/org.dhatim/fastexcel
     implementation("org.dhatim:fastexcel:0.20.0")
+
+    // Source: https://mvnrepository.com/artifact/org.dhatim/fastexcel-reader
+    implementation("org.dhatim:fastexcel-reader:0.20.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

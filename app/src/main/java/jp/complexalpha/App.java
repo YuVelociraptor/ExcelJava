@@ -29,7 +29,7 @@ public class App {
 
         System.out.println("FASTEXCEL EXCEL START");
         long st_fast = ZonedDateTime.now().toEpochSecond();
-        XlsxFastx.writeXlsx(dir + "/fastexel_" +  fileTime + ".xlsx", testRows);
+        XlsxFastx.writeNewXlsx(dir + "/fastexel_" +  fileTime + ".xlsx", testRows);
         System.out.print(ZonedDateTime.now().toEpochSecond() - st_fast);
         System.out.println(" ms");
         System.out.println("FASTEXCEL EXCEL END");
