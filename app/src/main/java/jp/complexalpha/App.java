@@ -4,6 +4,7 @@
 package jp.complexalpha;
 
 import jp.complexalpha.poip.XlsxPoi;
+import jp.complexalpha.fastx.XlsxFastx;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -18,5 +19,7 @@ public class App {
 
         System.out.println("POI EXCEL START");
         XlsxPoi.writeNewXlsx(dir + "/poi_" + now + ".xlsx");
+
+        XlsxFastx.writeXlsx(dir + "/fastexel_" +  now + ".xlsx");
     }
 }
