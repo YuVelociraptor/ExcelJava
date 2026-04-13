@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class XlsxFastx {
 
-    public static void writeXlsx(String filePath, int rows) throws IOException {
+    public static void writeNewXlsx(String filePath, int rows) throws IOException {
 
         try(
                 FileOutputStream out = new FileOutputStream(filePath);
