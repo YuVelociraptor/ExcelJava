@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class XlsxPoi {
 
-    public void writeNewXlsx(String filePath) throws IOException {
+    public static void writeNewXlsx(String filePath) throws IOException {
 
 
         try (

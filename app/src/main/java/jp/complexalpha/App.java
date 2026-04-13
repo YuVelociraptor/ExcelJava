@@ -3,12 +3,20 @@
  */
 package jp.complexalpha;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import jp.complexalpha.poip.XlsxPoi;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class App {
+
+    public static void main(String[] args) throws IOException {
+
+        String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        String dir = args[0];
+
+        System.out.println("POI EXCEL START");
+        XlsxPoi.writeNewXlsx(dir + "/poi_" + now + ".xlsx");
     }
 }
