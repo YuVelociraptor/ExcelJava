@@ -3,6 +3,7 @@
  */
 package jp.complexalpha;
 
+import jp.complexalpha.poip.XlsxPoi;
 import jp.complexalpha.fastx.XlsxFastx;
 
 import java.io.IOException;
@@ -15,6 +16,10 @@ public class App {
 
         String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
         String dir = args[0];
+
+        System.out.println("POI EXCEL START");
+        XlsxPoi.writeNewXlsx(dir + "/poi_" + now + ".xlsx");
+
         XlsxFastx.writeXlsx(dir + "/fastexel_" +  now + ".xlsx");
     }
 }
