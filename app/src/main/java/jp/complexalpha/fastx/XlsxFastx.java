@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class XlsxFastx {
 
-    public static void writeXlsx(String filePath) throws IOException {
+    public static void writeXlsx(String filePath, int rows) throws IOException {
 
         try(
                 FileOutputStream out = new FileOutputStream(filePath);
@@ -18,15 +18,12 @@ public class XlsxFastx {
             Worksheet ws = workbook.newWorksheet("Sheet001");
 
             // ヘッダ
-            ws.value(0, 0, "名前");
-            ws.value(0, 1, "年齢");
+            ws.value(0, 0, "Number");
 
-            // データ
-            ws.value(1, 0, "田中");
-            ws.value(1, 1, 20);
+            for (int i = 1; i <= rows; i++) {
+                ws.value(i, 0, i);
+            }
 
-            ws.value(2, 0, "佐藤");
-            ws.value(2, 1, 22);
         }
     }
 }

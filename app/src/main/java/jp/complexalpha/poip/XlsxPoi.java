@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class XlsxPoi {
 
-    public static void writeNewXlsx(String filePath) throws IOException {
+    public static void writeNewXlsx(String filePath, int rows) throws IOException {
 
 
         try (
@@ -25,7 +25,7 @@ public class XlsxPoi {
             Row header = sheet.createRow(0);
             header.createCell(0).setCellValue("Number");
 
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 1; i <= rows; i++) {
                 Row row = sheet.createRow(i);
                 row.createCell(0).setCellValue(i);
             }

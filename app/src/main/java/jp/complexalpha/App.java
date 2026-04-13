@@ -8,18 +8,30 @@ import jp.complexalpha.fastx.XlsxFastx;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
 
-        String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        String fileTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
         String dir = args[0];
 
-        System.out.println("POI EXCEL START");
-        XlsxPoi.writeNewXlsx(dir + "/poi_" + now + ".xlsx");
+        int testRows = 1000000;
 
-        XlsxFastx.writeXlsx(dir + "/fastexel_" +  now + ".xlsx");
+        System.out.println("POI EXCEL START");
+        long st_poi = ZonedDateTime.now().toEpochSecond();
+        XlsxPoi.writeNewXlsx(dir + "/poi_" + fileTime + ".xlsx", testRows);
+        System.out.print(ZonedDateTime.now().toEpochSecond() - st_poi);
+        System.out.println(" ms");
+        System.out.println("POI EXCEL END");
+
+        System.out.println("FASTEXCEL EXCEL START");
+        long st_fast = ZonedDateTime.now().toEpochSecond();
+        XlsxFastx.writeXlsx(dir + "/fastexel_" +  fileTime + ".xlsx", testRows);
+        System.out.print(ZonedDateTime.now().toEpochSecond() - st_fast);
+        System.out.println(" ms");
+        System.out.println("FASTEXCEL EXCEL END");
     }
 }
