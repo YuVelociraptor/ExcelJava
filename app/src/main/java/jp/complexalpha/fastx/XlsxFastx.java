@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class XlsxFastx {
 
-    public void writeXlsx(String filePath) throws IOException {
+    public static void writeXlsx(String filePath) throws IOException {
 
         try(
                 FileOutputStream out = new FileOutputStream(filePath);
-                Workbook workbook = new Workbook(out, "", "");
+                Workbook workbook = new Workbook(out, "app", "1.0");
                 ){
-            Worksheet ws = workbook.newWorksheet("Sheet1");
+            Worksheet ws = workbook.newWorksheet("Sheet001");
 
             // ヘッダ
             ws.value(0, 0, "名前");
